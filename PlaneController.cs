@@ -31,6 +31,10 @@ public class PlaneController : MonoBehaviour
         //if ((int)Time.deltaTime % reverseInterval == 0 )
         if ((int)elapsedTime % reverseInterval == 0 && canReverse)
         {
+            Vector3 theScale = transform.localScale;
+            theScale.x *= -1;
+            transform.localScale = theScale;
+
             rotationStep = -rotationStep;
             canReverse = false;
         }
