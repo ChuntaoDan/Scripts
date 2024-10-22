@@ -7,6 +7,7 @@ public class PlaneController : MonoBehaviour
 {
     private int reverseInterval;
     private int rotationStep;
+    private float elapsedTime;
 
     // Start is called before the first frame update
     void Start()
@@ -24,9 +25,11 @@ public class PlaneController : MonoBehaviour
     void Update()
     {
         transform.Rotate(new Vector3(0, rotationStep, 0) * Time.deltaTime);
-        if ((int)Time.deltaTime % reverseInterval == 0 )
+        elapsedTime += Time.deltaTime; // Accumulate elapsed time
+        //if ((int)Time.deltaTime % reverseInterval == 0 )
+        if (elapsedTime > reverseInterval)
          {
-            //rotationStep = -rotationStep;
+            rotationStep = -rotationStep;
          }
     }
 }
