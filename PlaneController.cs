@@ -30,9 +30,14 @@ public class PlaneController : MonoBehaviour
         elapsedTime += Time.deltaTime; // Accumulate elapsed time
         //if ((int)Time.deltaTime % reverseInterval == 0 )
         if ((int)elapsedTime % reverseInterval == 0 && canReverse)
-         {
+        {
             rotationStep = -rotationStep;
             canReverse = false;
-         }
+        }
+
+        if ((int)elapsedTime % reverseInterval > 0) 
+        {
+            canReverse = true;
+        }
     }
 }
