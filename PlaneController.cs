@@ -27,7 +27,7 @@ public class PlaneController : MonoBehaviour
         transform.Rotate(new Vector3(0, rotationStep, 0) * Time.deltaTime);
         elapsedTime += Time.deltaTime; // Accumulate elapsed time
         //if ((int)Time.deltaTime % reverseInterval == 0 )
-        if (elapsedTime > reverseInterval)
+        if ((int)elapsedTime % reverseInterval == 0)
          {
             rotationStep = -rotationStep;
          }
