@@ -105,6 +105,11 @@ public class talk2NiDaqMx : MonoBehaviour
 
                     Janelia.Logger.Log(_currentLogEntry);
 
+                    // Change GameObject behavior based on input values
+                    // Example: Move the GameObject based on tracePD value
+                    //float movementSpeed = 5.0f; // Adjust speed as necessary
+                    //transform.position += new Vector3(_currentLogEntry.tracePD * movementSpeed * Time.deltaTime, 0, 0);
+            
                 }
             }
             else
